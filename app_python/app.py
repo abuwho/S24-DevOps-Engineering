@@ -1,7 +1,9 @@
 from flask import Flask, render_template
 from datetime import datetime, timezone, timedelta
+from prometheus_flask_exporter import PrometheusMetrics
 
 app = Flask(__name__)
+metrics = PrometheusMetrics(app)
 
 
 def get_moscow_time():
