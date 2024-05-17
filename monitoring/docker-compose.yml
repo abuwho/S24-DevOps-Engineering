@@ -50,7 +50,7 @@ services:
       retries: 3
   
   app_python:
-    build: ../app_python
+    build: abuwho/app_python
     ports:
       - "5000:5000"
     logging:
@@ -63,6 +63,8 @@ services:
       interval: 30s
       timeout: 15s
       retries: 3
+    volumes:
+      - ./visits:/app_python/visits
   
   app_go:
     build: ../app_go
